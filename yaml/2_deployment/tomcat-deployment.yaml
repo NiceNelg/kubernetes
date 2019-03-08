@@ -9,3 +9,15 @@ spec:
             tier: frontend
         matchExpressions:
             - {key: tier, operator: In, values: [frontend]}
+    template:
+        metadata:
+            labels:
+                app: app-demo
+                tier: frontend
+        spec:
+            containers:
+            - name: tomcat-demo
+              image: tomcat
+              imagePullPolicy: IfNotPresent
+              ports:
+              - containerPort: 8080
