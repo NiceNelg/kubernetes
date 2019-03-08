@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: frontend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            tier: frontend
+        matchExpressions:
+            - {key: tier, operator: In, values: [frontend]}
